@@ -14,6 +14,7 @@ do
 	echo $line;
 	echo "==========";
 	branch="`git branch | grep "^*" | cut -c 3- | tr -d " \n"`";
+	git fetch;
 	git pull --ff origin $branch;
 	popd > /dev/null 2>&1;
 done;
